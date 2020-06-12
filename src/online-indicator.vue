@@ -1,6 +1,6 @@
 <template>
-  <div ref="OnlineIndicator" :class="`show-${positionClass} online-indicator ${$attrs.class}`" :style="$attrs.styles">
-        <span :style="$attrs.spanStyles" :class="`${spanClass} indicator-text`">
+  <div ref="OnlineIndicator" :class="`show-${positionClass} online-indicator ${$attrs.class}`" :style="styles">
+        <span :style="spanStyles" :class="`${spanClass} indicator-text`">
             {{isOnline ? onlineMsg : offlineMsg}}    
         </span>
   </div>
@@ -27,7 +27,17 @@ export default {
             type: String,
             required: false,
             default: ''
-        }
+        },
+        styles: {
+            type: Object,
+            required: false,
+            default: () => ({})
+        },
+        spanStyles: {
+            type: Object,
+            required: false,
+            default: () => ({})
+        },
     },
     data: () => ({
         isOnline: !!window.navigator.onLine,
