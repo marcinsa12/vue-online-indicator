@@ -13,7 +13,7 @@ export default {
         position: {
             type: String,
             validator: value => {
-               return ['top-righ', 'top-left','top-center','bottom-right', 'bottom-left', 'bottom-center'].includes(value)
+               return ['top-right', 'top-left','top-center','bottom-right', 'bottom-left', 'bottom-center'].includes(value)
             },
             required: false,
             default: 'top-right'
@@ -47,7 +47,7 @@ export default {
     }),
     computed: {
         positionClass() {
-            return ['top-righ', 'top-left','top-center','bottom-right', 'bottom-left', 'bottom-center'].includes(this.position) && this.position || 'top-right'
+            return ['top-right', 'top-left','top-center','bottom-right', 'bottom-left', 'bottom-center'].includes(this.position) && this.position || 'top-right'
         }
     },
     methods: {
